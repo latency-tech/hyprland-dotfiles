@@ -1,0 +1,108 @@
+* {
+  font-family: "Inter", "SF Pro Text", sans-serif;
+  font-size: 13px;
+}
+
+.floating-notifications {
+  margin: 8px 16px;
+}
+
+.floating-notifications .notification-row {
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.floating-notifications .notification-background {
+  background-color: {{ colors.surface_container.dark.alpha_hex_stripped | set_alpha: 0.88 | format: "rgba" }};
+  border: 1px solid {{ colors.outline_variant.dark.alpha_hex_stripped | set_alpha: 0.25 | format: "rgba" }};
+  border-radius: 16px;
+  padding: 14px 16px;
+  min-height: 20px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.floating-notifications .notification-background:hover {
+  background-color: {{ colors.surface_container_high.dark.alpha_hex_stripped | set_alpha: 0.9 | format: "rgba" }};
+  border-color: {{ colors.outline_variant.dark.alpha_hex_stripped | set_alpha: 0.45 | format: "rgba" }};
+}
+
+.floating-notifications .notification {
+  min-width: 320px;
+}
+
+.floating-notifications .notification image {
+  border-radius: 10px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.floating-notifications .notification .summary {
+  font-weight: 600;
+  font-size: 14px;
+  color: {{ colors.on_surface.dark.hex }};
+  margin-bottom: 2px;
+}
+
+.floating-notifications .notification .body {
+  font-size: 13px;
+  color: {{ colors.on_surface_variant.dark.hex }};
+  line-height: 1.45;
+}
+
+.floating-notifications .notification .time {
+  font-size: 11px;
+  font-weight: 500;
+  color: {{ colors.on_surface_variant.dark.alpha_hex_stripped | set_alpha: 0.55 | format: "rgba" }};
+  margin-left: 8px;
+}
+
+.floating-notifications .close-button {
+  background-color: {{ colors.on_surface_variant.dark.alpha_hex_stripped | set_alpha: 0.08 | format: "rgba" }};
+  border-radius: 50%;
+  min-width: 26px;
+  min-height: 26px;
+  padding: 0;
+  transition: background-color 0.15s ease;
+  margin-left: 8px;
+}
+
+.floating-notifications .close-button:hover {
+  background-color: {{ colors.error.dark.alpha_hex_stripped | set_alpha: 0.2 | format: "rgba" }};
+}
+
+.floating-notifications .close-button image {
+  color: {{ colors.on_surface_variant.dark.hex }};
+  font-size: 14px;
+}
+
+.floating-notifications .notification-actions {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid {{ colors.outline_variant.dark.alpha_hex_stripped | set_alpha: 0.25 | format: "rgba" }};
+}
+
+.floating-notifications .notification-actions button {
+  background-color: {{ colors.primary.dark.alpha_hex_stripped | set_alpha: 0.12 | format: "rgba" }};
+  color: {{ colors.primary.dark.hex }};
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.floating-notifications .notification-actions button:hover {
+  background-color: {{ colors.primary.dark.alpha_hex_stripped | set_alpha: 0.22 | format: "rgba" }};
+}
+
+.floating-notifications .notification-actions button:active {
+  background-color: {{ colors.primary.dark.alpha_hex_stripped | set_alpha: 0.3 | format: "rgba" }};
+}
+
+.floating-notifications .notification-actions button:first-child {
+  margin-right: 6px;
+}
+
+.floating-notifications .notification-actions button:last-child {
+  margin-left: 6px;
+}

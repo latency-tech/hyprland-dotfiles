@@ -1,0 +1,45 @@
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+}
+
+window {
+    background: alpha(#141314, 0.75);
+}
+
+button {
+    background: alpha(#2b292a, 0.6);
+    color: #e7e1e2;
+    border: 1px solid alpha(#4b454a, 0.3);
+    border-radius: 28px;
+    margin: 12px;
+    padding: 0;
+    min-width: 120px;
+    min-height: 120px;
+    font-size: 52px;
+    font-weight: 400;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0%;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px alpha(#000000, 0.15);
+}
+
+button label {
+    padding: 0;
+    margin: 0;
+}
+
+button:hover {
+    background: #d5c1d1;
+    color: #392c39;
+    border-color: #d5c1d1;
+    box-shadow: 0 4px 16px alpha(#d5c1d1, 0.3);
+}
+
+button:focus, button:active {
+    background: #4b3d4a;
+    color: #e6d1e2;
+    border-color: #d5c1d1;
+    outline-style: none;
+}

@@ -1,0 +1,108 @@
+* {
+  font-family: "Inter", "SF Pro Text", sans-serif;
+  font-size: 13px;
+}
+
+.floating-notifications {
+  margin: 8px 16px;
+}
+
+.floating-notifications .notification-row {
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.floating-notifications .notification-background {
+  background-color: rgba(33, 31, 32, 0.88);
+  border: 1px solid rgba(75, 69, 74, 0.25);
+  border-radius: 16px;
+  padding: 14px 16px;
+  min-height: 20px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.floating-notifications .notification-background:hover {
+  background-color: rgba(43, 41, 42, 0.9);
+  border-color: rgba(75, 69, 74, 0.45);
+}
+
+.floating-notifications .notification {
+  min-width: 320px;
+}
+
+.floating-notifications .notification image {
+  border-radius: 10px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.floating-notifications .notification .summary {
+  font-weight: 600;
+  font-size: 14px;
+  color: #e7e1e2;
+  margin-bottom: 2px;
+}
+
+.floating-notifications .notification .body {
+  font-size: 13px;
+  color: #cec4ca;
+  line-height: 1.45;
+}
+
+.floating-notifications .notification .time {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(206, 196, 202, 0.55);
+  margin-left: 8px;
+}
+
+.floating-notifications .close-button {
+  background-color: rgba(206, 196, 202, 0.08);
+  border-radius: 50%;
+  min-width: 26px;
+  min-height: 26px;
+  padding: 0;
+  transition: background-color 0.15s ease;
+  margin-left: 8px;
+}
+
+.floating-notifications .close-button:hover {
+  background-color: rgba(255, 180, 171, 0.2);
+}
+
+.floating-notifications .close-button image {
+  color: #cec4ca;
+  font-size: 14px;
+}
+
+.floating-notifications .notification-actions {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(75, 69, 74, 0.25);
+}
+
+.floating-notifications .notification-actions button {
+  background-color: rgba(213, 193, 209, 0.12);
+  color: #d5c1d1;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.floating-notifications .notification-actions button:hover {
+  background-color: rgba(213, 193, 209, 0.22);
+}
+
+.floating-notifications .notification-actions button:active {
+  background-color: rgba(213, 193, 209, 0.3);
+}
+
+.floating-notifications .notification-actions button:first-child {
+  margin-right: 6px;
+}
+
+.floating-notifications .notification-actions button:last-child {
+  margin-left: 6px;
+}

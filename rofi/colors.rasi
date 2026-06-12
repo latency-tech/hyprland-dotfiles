@@ -1,0 +1,27 @@
+* {
+    matugen-background:    #141314;
+    matugen-on-background: #e7e1e2;
+    matugen-surface:       #141314;
+    matugen-surface-dim:   #141314;
+    matugen-surface-bright:#3b3839;
+    matugen-surface-container:        #211f20;
+    matugen-surface-container-low:    #1d1b1c;
+    matugen-surface-container-high:   #2b292a;
+    matugen-on-surface:            #e7e1e2;
+    matugen-on-surface-variant:    #cec4ca;
+    matugen-primary:        #4b3d4a;
+    matugen-on-primary:     #ffffff;
+    matugen-primary-container:     #4b3d4a;
+    matugen-on-primary-container:  #e6d1e2;
+    matugen-secondary:      #cec3ca;
+    matugen-on-secondary:   #352e34;
+    matugen-secondary-container:   #4e474d;
+    matugen-on-secondary-container:#ede1e8;
+    matugen-tertiary:       #c6c9af;
+    matugen-on-tertiary:    #2f3220;
+    matugen-outline:        #978e94;
+    matugen-outline-variant:#4b454a;
+    matugen-error:          #ffb4ab;
+    matugen-on-error:       #690005;
+    matugen-shadow:         #000000;
+}

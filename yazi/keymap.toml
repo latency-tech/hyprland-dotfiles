@@ -1,0 +1,29 @@
+[[manager.prepend_keymap]]
+on   = [ "<Up>" ]
+run  = "arrow -1"
+desc = "Вверх"
+
+[[manager.prepend_keymap]]
+on   = [ "<Down>" ]
+run  = "arrow 1"
+desc = "Вниз"
+
+[[manager.prepend_keymap]]
+on   = [ "<Left>" ]
+run  = "leave"
+desc = "Назад"
+
+[[manager.prepend_keymap]]
+on   = [ "<Right>" ]
+run  = "enter"
+desc = "Вперед"
+
+[[manager.prepend_keymap]]
+on   = [ "<Delete>" ]
+run  = "remove"
+desc = "Удалить"
+
+[[manager.prepend_keymap]]
+on   = [ "<Enter>" ]
+run  = "open"
+desc = "Открыть"

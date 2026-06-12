@@ -1,0 +1,140 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@surface_dim, 0.85);
+    border-radius: 14px;
+    margin: 6px 6px 0 6px;
+    padding: 0 8px;
+}
+
+#workspaces {
+    margin: 3px 0;
+    background: alpha(@surface_container_high, 0.5);
+    border-radius: 20px;
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    margin: 1px 2px;
+    border-radius: 20px;
+    background: transparent;
+    color: @on_surface_variant;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary;
+    min-width: 24px;
+}
+
+#workspaces button.urgent {
+    background: @error;
+    color: @on_error;
+}
+
+#workspaces button:hover {
+    background: alpha(@primary, 0.2);
+    color: @primary;
+}
+
+#window {
+    color: @on_surface_variant;
+    font-weight: 400;
+    padding: 0 12px;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#custom-logo,
+#custom-power,
+#tray {
+    background: alpha(@surface_container_high, 0.5);
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin: 3px 2px;
+    color: @on_surface;
+}
+
+#clock {
+    color: @primary;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#pulseaudio {
+    color: @on_surface;
+}
+
+#pulseaudio.muted {
+    color: @on_surface_variant;
+}
+
+#network {
+    color: @on_surface;
+}
+
+#network.disconnected {
+    color: @error;
+}
+
+#bluetooth {
+    color: @on_surface;
+}
+
+#bluetooth.off {
+    color: @on_surface_variant;
+}
+
+#cpu {
+    color: @on_surface;
+}
+
+#cpu.warning {
+    color: @tertiary;
+}
+
+#cpu.critical {
+    color: @error;
+}
+
+#memory {
+    color: @on_surface;
+}
+
+#custom-logo {
+    color: @primary;
+    font-size: 16px;
+    padding: 2px 10px;
+}
+
+#custom-power {
+    color: @error;
+    font-size: 15px;
+}
+
+#tray {
+    padding: 2px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: alpha(@error, 0.2);
+}

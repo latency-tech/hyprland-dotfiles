@@ -1,0 +1,207 @@
+@import "colors.rasi"
+
+configuration {
+  modi: "drun,run,window";
+  case-sensitive: false;
+  cycle: true;
+  normalize-match: true;
+  show-icons: true;
+  icon-theme: "Papirus";
+  matching: "normal";
+  tokenize: true;
+  drun-match-fields: "name,generic,exec,categories,keywords";
+  drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+  drun-show-actions: false;
+  drun-url-launcher: "xdg-open";
+  run-command: "{cmd}";
+  run-shell-command: "{terminal} -e {cmd}";
+  window-match-fields: "title,class";
+  window-command: "wmctrl -i -R {window}";
+  window-thumbnail: false;
+  disable-history: false;
+  sorting-method: "normal";
+  max-history-size: 25;
+  display-window: "Windows";
+  display-run: "Run";
+  display-drun: "Apps";
+  display-filebrowser: "Files";
+  terminal: "rofi-sensible-terminal";
+  font: "JetBrainsMono Nerd 12";
+  sort: false;
+  threads: 0;
+  click-to-exit: true;
+  lines: 7;
+  drun {
+    parse-user: true;
+    parse-system: true;
+  }
+  run,drun {
+    fallback-icon: "application-x-addon";
+  }
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+  timeout {
+    action: "kb-cancel";
+    delay: 0;
+  }
+}
+
+* {
+  bg:                       @matugen-surface-container-high;
+  bg-alt:                   @matugen-surface-container;
+  fg:                       @matugen-on-surface;
+  fg-alt:                   @matugen-on-surface-variant;
+  primary:                  @matugen-primary;
+  on-primary:               @matugen-on-primary;
+  primary-container:        @matugen-primary-container;
+  on-primary-container:     @matugen-on-primary-container;
+  secondary-container:      @matugen-secondary-container;
+  on-secondary-container:   @matugen-on-secondary-container;
+  surface:                  @matugen-surface;
+  surface-bright:           @matugen-surface-bright;
+  outline:                  @matugen-outline;
+  outline-variant:          @matugen-outline-variant;
+  error:                    @matugen-error;
+  on-error:                 @matugen-on-error;
+  textbox-bg:               @matugen-surface-container;
+  background:               @matugen-surface-container;
+  foreground:               @matugen-on-surface;
+  lightbg:                  @matugen-surface-container-low;
+  lightfg:                  @matugen-on-surface-variant;
+  red:                      @matugen-error;
+  blue:                     @matugen-primary;
+  spacing: 2px;
+  padding: 6px;
+  corner: 12px;
+  element-corner: 6px;
+  border-width: 1px;
+}
+
+window {
+  width: 400px;
+  border-radius: @corner;
+  background-color: @bg;
+  border: @border-width;
+  border-color: @primary;
+  padding: 0;
+  margin: 0;
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  spacing: 0;
+  padding: 0;
+  border-radius: @corner;
+  background-color: transparent;
+}
+
+inputbar {
+  children: [entry];
+  spacing: 0;
+  padding: 6px 10px 2px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+entry {
+  background-color: @textbox-bg;
+  text-color: @fg;
+  cursor-color: @primary;
+  cursor: "block";
+  cursor-width: 2;
+  placeholder: "Search";
+  placeholder-color: @fg-alt;
+  padding: 6px 12px;
+  border-radius: @element-corner;
+  font: "JetBrainsMono Nerd 12";
+}
+
+listview {
+  padding: 2px 10px 8px;
+  spacing: 2px;
+  layout: vertical;
+  cycle: true;
+  dynamic: false;
+  fixed-height: true;
+  lines: 7;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+element {
+  padding: 5px 12px;
+  spacing: 8px;
+  background-color: transparent;
+  border-radius: @element-corner;
+  text-color: @fg;
+}
+
+element normal {
+  background-color: transparent;
+  text-color: @fg;
+}
+
+element alternate {
+  background-color: transparent;
+}
+
+element selected {
+  background-color: @primary;
+  text-color: @on-primary;
+  border-radius: @element-corner;
+}
+
+element-icon {
+  size: 24px;
+  background-color: transparent;
+  text-color: inherit;
+  border-radius: 8px;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+  highlight: bold;
+  highlight-color: @primary;
+}
+
+element selected element-icon {
+  text-color: @on-primary;
+}
+
+element selected element-text {
+  text-color: @on-primary;
+  highlight-color: @primary;
+}
+
+button {
+  background-color: transparent;
+  text-color: @fg-alt;
+  padding: 4px 12px;
+  border-radius: @element-corner;
+}
+
+button selected {
+  background-color: @primary;
+  text-color: @on-primary;
+}
+
+message {
+  background-color: transparent;
+  padding: 8px 16px 16px;
+  border-radius: 0;
+}
+
+error-message {
+  background-color: @bg;
+  padding: 16px;
+  border-radius: @corner;
+  text-color: @error;
+}

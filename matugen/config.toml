@@ -1,0 +1,34 @@
+[config]
+backend = "MaterialYou"
+type = "scheme-expressive"
+
+[templates.rofi]
+input_path = "/home/latency/.config/matugen/templates/colors.rasi"
+output_path = "/home/latency/.config/rofi/colors.rasi"
+
+[templates.hyprland]
+input_path = "/home/latency/.config/matugen/templates/hyprland_colors.conf"
+output_path = "/home/latency/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.swaync]
+input_path = "/home/latency/.config/matugen/templates/swaync-style.css"
+output_path = "/home/latency/.config/swaync/style.css"
+post_hook = "swaync-client -R && swaync-client -rs"
+
+[templates.foot]
+input_path = "/home/latency/.config/matugen/templates/foot.ini"
+output_path = "/home/latency/.config/foot/colors.ini"
+
+[templates.wlogout]
+input_path = "/home/latency/.config/matugen/templates/wlogout-style.css"
+output_path = "/home/latency/.config/wlogout/style.css"
+
+[templates.waybar]
+input_path = "/home/latency/.config/matugen/templates/waybar-colors.css"
+output_path = "/home/latency/.config/waybar/colors.css"
+post_hook = "killall -SIGUSR2 waybar"
+
+[templates.clipman]
+input_path = "/home/latency/.config/matugen/templates/clipman.css"
+output_path = "/home/latency/.config/clipman/colors.css"
