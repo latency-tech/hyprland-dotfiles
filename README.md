@@ -122,14 +122,6 @@ hyprctl reload
 - **Do not track generated color files.** Files like `colors.css`, `colors.ini`, `colors.rasi`, and `style.css` (in swaync/wlogout) are output by matugen. Your wallpaper sets the theme automatically.
 - After running `matugen` or `matuwall`, the color files are regenerated from templates inside `matugen/templates/`.
 
-## Updates
-
-```bash
-cd ~/dotfiles && ./update.sh
-```
-
-This syncs `~/.config/<dir>` → `~/dotfiles/<dir>` via `rsync` and interactively prompts to commit.
-
 ## Structure
 
 ```
