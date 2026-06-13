@@ -6,14 +6,10 @@ Material You themed Hyprland dotfiles that automatically adapt to your wallpaper
 
 ## Showcase
 
-<p align="center">
-  <video src="https://github.com/latency-tech/hyprland-dotfiles/raw/main/assets/showcase.mov" controls width="720"></video>
-</p>
-
 | | |
 |---|---|
-| ![Desktop](assets/desktop.jpg) | ![Rofi launcher](assets/rofi.jpg) |
-| ![Notifications](assets/notifications.jpg) | ![Wlogout powermenu](assets/wlogout.jpg) |
+| ![Desktop](assets/desktop.jpg) | ![Matuwall wallpaper picker](assets/matuwall.jpg) |
+| ![Rofi launcher](assets/rofi.jpg) | ![Wlogout powermenu](assets/wlogout.jpg) |
 
 ## Features
 
