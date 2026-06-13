@@ -7,7 +7,7 @@ Material You themed Hyprland dotfiles that automatically adapt to your wallpaper
 ## Showcase
 
 <p align="center">
-  <video src="assets/showcase.mp4" controls width="720"></video>
+  <video src="https://github.com/latency-tech/hyprland-dotfiles/raw/main/assets/showcase.mov" controls width="720"></video>
 </p>
 
 | | |
