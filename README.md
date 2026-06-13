@@ -1,92 +1,104 @@
 # hyprland-dotfiles
 
-Material You themed Hyprland dotfiles, автоматически подстраивающиеся под обои через [matugen](https://github.com/InioX/matugen).
+> Built on [CachyOS](https://cachyos.org) — works on any **Arch-based** distribution.
 
-## Зависимости
+Material You themed Hyprland dotfiles that automatically adapt to your wallpaper via [matugen](https://github.com/InioX/matugen).
 
-### Основные
+## Dependencies
 
-| Пакет | Описание |
+### Core
+
+| Package | Description |
 |---|---|
-| [Hyprland](https://hyprland.org) | Оконный менеджер |
-| [waybar](https://github.com/Alexays/Waybar) | Панель |
-| [swaync](https://github.com/ErikReider/SwayNotificationCenter) | Центр уведомлений |
-| [rofi](https://github.com/davatorium/rofi) | Лаунчер |
-| [wlogout](https://github.com/ArtsyMacaw/wlogout) | Меню выключения |
-| [foot](https://codeberg.org/dnkl/foot) | Терминал |
-| [fish](https://fishshell.com) | Шелл |
-| [yazi](https://yazi-rs.github.io) | Файловый менеджер |
-| [fastfetch](https://github.com/fastfetch-cli/fastfetch) | Информация о системе |
-| [clipman](https://github.com/chmouel/clipman) | Менеджер буфера обмена |
+| [Hyprland](https://hyprland.org) | Window manager |
+| [waybar](https://github.com/Alexays/Waybar) | Status bar |
+| [swaync](https://github.com/ErikReider/SwayNotificationCenter) | Notification center |
+| [rofi](https://github.com/davatorium/rofi) | Application launcher |
+| [wlogout](https://github.com/ArtsyMacaw/wlogout) | Powermenu |
+| [foot](https://codeberg.org/dnkl/foot) | Terminal emulator |
+| [fish](https://fishshell.com) | Shell |
+| [yazi](https://yazi-rs.github.io) | File manager |
+| [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info |
+| [clipman](https://github.com/chmouel/clipman) | Clipboard manager |
 
-### Темизация
+### Theming
 
-| Пакет | Описание |
+| Package | Description |
 |---|---|
-| [matugen](https://github.com/InioX/matugen) | Генератор цветов Material You |
-| [matuwall](https://github.com/InioX/matuwall) | Выбор обоев с автогенерацией цветов |
+| [matugen](https://github.com/InioX/matugen) | Material You color generator |
+| [matuwall](https://github.com/InioX/matuwall) | Wallpaper picker with auto color generation |
 
-### Утилиты
+### Utilities
 
-| Пакет | Описание |
+| Package | Description |
 |---|---|
-| cliphist | История буфера обмена |
-| grim / slurp | Скриншоты |
-| wl-clipboard | Буфер обмена (wl-paste, wl-copy) |
-| swayosd-server / swayosd-client | Экранные индикаторы (громкость, яркость) |
-| brightnessctl | Управление яркостью |
-| awww-daemon | Анимации при смене обоев |
-| papirus-icon-theme | Иконки для rofi |
+| cliphist | Clipboard history |
+| grim / slurp | Screenshots |
+| wl-clipboard | Clipboard (wl-paste, wl-copy) |
+| swayosd | On-screen display (volume, brightness) |
+| brightnessctl | Brightness control |
+| awww-daemon | Wallpaper transition animations |
+| papirus-icon-theme | Icons for rofi |
 
-### Шрифты
+### Fonts
 
 - [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)
 - Inter
 
-## Установка
+## Installation
+
+> **Note:** If you're on Arch/CachyOS, most dependencies can be installed from the official repos or AUR.
 
 ```bash
-# Клонировать репо
+# Clone the repo
 git clone https://github.com/latency-tech/hyprland-dotfiles.git ~/dotfiles
 
-# Создать симлинки в ~/.config (через stow или вручную)
+# Symlink configs into ~/.config
 cd ~/dotfiles
 for dir in */; do
   ln -sf "$PWD/$dir" "$HOME/.config/${dir%/}"
 done
 
-# Установить шрифт (пример для Arch)
+# Install fonts (example for Arch)
 yay -S ttf-jetbrains-mono-nerd
 
-# Запустить matugen для генерации цветов (или matuwall для выбора обоев)
+# Generate colors from a wallpaper
 matugen image ~/Pictures/Wallpaper/your-wallpaper.jpg
 
-# Перезагрузить Hyprland
+# Or pick a wallpaper with auto color generation
+matuwall
+
+# Reload Hyprland
 hyprctl reload
 ```
 
-## Обновление
+### Important notes
+
+- **Do not track generated color files.** Files like `colors.css`, `colors.ini`, `colors.rasi`, and `style.css` (in swaync/wlogout) are output by matugen. Your wallpaper sets the theme automatically.
+- After running `matugen` or `matuwall`, the color files are regenerated from templates inside `matugen/templates/`.
+
+## Updates
 
 ```bash
 cd ~/dotfiles && ./update.sh
 ```
 
-Скрипт синхронизирует `~/.config/<dir>` → `~/dotfiles/<dir>` через `rsync` и предложит закоммитить изменения.
+This syncs `~/.config/<dir>` → `~/dotfiles/<dir>` via `rsync` and interactively prompts to commit.
 
-## Структура
+## Structure
 
 ```
 dotfiles/
-├── clipman/       # цвета клипмана
-├── fastfetch/     # информация о системе
-├── fish/          # конфиг шелла + prompt
-├── foot/          # терминал
-├── hypr/          # Hyprland (основной конфиг, lockscreen, цвета)
-├── matugen/       # шаблоны генерации цветов (Material You)
-├── matuwall/      # выбор обоев
-├── rofi/          # лаунчер
-├── swaync/        # уведомления
-├── waybar/        # панель
-├── wlogout/       # меню выключения
-└── yazi/          # файловый менеджер
+├── clipman/       # Clipboard colors
+├── fastfetch/     # System info display
+├── fish/          # Shell config & prompt
+├── foot/          # Terminal config
+├── hypr/          # Hyprland (main config, lockscreen, borders)
+├── matugen/       # Material You color templates
+├── matuwall/      # Wallpaper picker config
+├── rofi/          # Launcher config
+├── swaync/        # Notification center
+├── waybar/        # Status bar
+├── wlogout/       # Powermenu
+└── yazi/          # File manager
 ```
